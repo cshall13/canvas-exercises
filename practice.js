@@ -25,6 +25,7 @@ var context = canvas.getContext('2d');
 var x = 200;
 var y = 200;
 var r = 50;
+var n = 1;
 var xDirection = 1;
 var yDirection = 1;
 var red = 0;
@@ -59,11 +60,17 @@ var ball = setInterval(drawBall,20);
 
 
 canvas.addEventListener("click", function(event){
-	console.log(event.x, event.y);
-	if((event.x = x<50) && (event.y = y<50)){
-		console.log("boom");
-	}
-circle.
+    //console.log(event);
+    if(Math.sqrt(Math.pow((event.layerY - y), 2) + Math.pow((event.layerX - x) ,2)) < 2*r){
+        n++;
+        x += n*xDirection;
+        y += n*yDirection;
+        ball = setInterval(drawBall,20);
+        console.log("circle hit")
+    }else{
+
+        console.log('missed')
+    }
 });
 
 
