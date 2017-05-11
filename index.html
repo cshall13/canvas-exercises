@@ -2,25 +2,81 @@
 <html>
 <head>
 	<title></title>
-	
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
 	<style type="text/css" media="screen">
-		canvas{
-			border: 10px solid black;
+
+		body{
+			background-image: url('http://cartoonbros.com/wp-content/uploads/2016/03/Rio-17.jpg');
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-position: center;
+			background-size: cover;
+		}
+		.drawing{
+			text-align: center;
 		}
 		
+		#canvas{
+			border: 10px solid black;
+			/* position: relative; */
+			/* left: 373px; */
+			background-color: white;
+			/* margin-left: 370px;	 */
+			/* text-align: center;		 */
+			margin: auto;
+		}
+
+		#toolbar{
+			text-align: center;
+		}
+		.time-left{
+			text-align: left; 
+			color: lightgray;
+			padding-left: 10px;
+		}
+		.heading{
+			list-style: none;
+		}
+		
+		.labels{
+			color: lightgray;
+		}
+		.btn{ 
+			margin-left: 10px;
+		}
+		.time-left, #minutes{
+			font-size: 20px;
+		}
+				
 	</style>
 		
 </head>
 <body>
 
 <div id="toolbar">
-	<label>Choose your marker color</label>
-	<input type="color" id="color-picker" />
-	<label>Choose your marker thickness</label>
-	<input type="number" id="thickness" value=10 />
+	<ul class="heading">
+		<li><img src="https://i.ytimg.com/vi/65mddfl0294/maxresdefault.jpg" height="250px" width="500px"></li>
+		<li><label class="labels"><h3>Choose your marker color</h3></label></li>
+		<li><input type="color" id="color-picker" /></li>
+		<li><label class="labels"><h3>Choose your marker thickness</h3></label></li>
+		<li><input type="number" id="thickness" value=10 /></li>
 </div>
 
-<canvas id="canvas" height="500px" width="500px">
+<div class="time-left">
+	<span><h3>Time Remaining</h3></span>
+	<span id="minutes"></span>
+		:
+	<span id="seconds"></span>
+		<button id="reset" type="button" class="btn btn-default">Reset</button>
+</div>
+
+
+
+<div class="drawing">
+	<canvas id="canvas" height="500px" width="500px"></canvas>
+</div>
 
 <script src="scripts.js" type="text/javascript"></script>
 

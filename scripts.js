@@ -66,3 +66,58 @@ canvas.addEventListener('mousemove', function(event){
 		}
 	}
 });
+
+var startTime = new Date();
+
+setInterval(
+	function(){
+		var currentTime = new Date();
+		var totalSeconds = (Date.parse(currentTime) - Date.parse(startTime))/1000;
+		// console.log(totalSeconds);
+		seconds = 120 - totalSeconds;
+		minutes = Math.floor(seconds/60)
+		var secondsLeft = Math.floor(seconds%60)		
+		if(seconds <= 0){
+			minutes = 0;
+			secondsLeft = "00";			
+		}
+		if(secondsLeft < 10 && secondsLeft > 0){
+			secondsLeft = "0" + secondsLeft;
+		}
+		document.getElementById('minutes').innerHTML = minutes;
+		document.getElementById('seconds').innerHTML = secondsLeft;
+		console.log(minutes,secondsLeft)
+		
+	},1000
+	)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
